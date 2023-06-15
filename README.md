@@ -4,7 +4,7 @@
 
 
 
-1. sqllite-net-pcl
+1. SQLite-net-pcl
 
 2. SQLitePCLRaw.bundle_green
 
