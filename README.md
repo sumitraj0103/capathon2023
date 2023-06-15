@@ -13,3 +13,5 @@
 4. SQLitePCLRaw.provider.dynamic_cdecl
 
 5. SQLitePCLRaw.provider.dynamic_sqlite3
+
+6. SQLitePCLRaw.provider.sqlite3
