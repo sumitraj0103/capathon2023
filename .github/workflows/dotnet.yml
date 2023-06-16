@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./MediTrack/MediTrack-Guest.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ./MediTrack/MediTrack-Guest.sln --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./MediTrack/MediTrack-Guest.sln --no-build --verbosity normal
