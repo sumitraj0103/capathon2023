@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    - name: Install MAUI workload
+      run: dotnet workload install maui
     - name: Restore dependencies
       run: dotnet restore ./MediTrack/MediTrack-Guest.sln
     - name: Build
