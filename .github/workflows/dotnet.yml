@@ -107,6 +107,8 @@ jobs:
           shell: bash
           run: |
             cd MediTrackPremium
+            dotnet clean Meditrack.sln
+            dotnet clean Meditrack\Meditrack.csproj
             dotnet publish -f:net6.0-android -c:Release
 
         - uses: actions/upload-artifact@v2
