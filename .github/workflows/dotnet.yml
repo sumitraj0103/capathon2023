@@ -106,7 +106,6 @@ jobs:
           run: |
             cd MediTrack
             dotnet publish -f:net6.0-android -c:Release
-            ls MediTrack-Guest
             ls MediTrack-Guest/bin
             
         # # Store Android Signing Keystore and password in Secrets using base64 encoding
