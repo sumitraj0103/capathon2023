@@ -98,6 +98,7 @@ jobs:
         - name: Restore nuget packages - MediTrack
           run: |
             cd MediTrack
+            dotnet clean MediTrack-Guest.sln
             dotnet restore MediTrack-Guest.sln
 
           # https://docs.microsoft.com/en-us/dotnet/maui/android/deployment/overview
@@ -105,7 +106,6 @@ jobs:
           shell: bash
           run: |
             cd MediTrack
-            dotnet clean MediTrack-Guest.sln
             dotnet publish -f:net6.0-android -c:Release
               
         - uses: actions/upload-artifact@v2
@@ -117,13 +117,13 @@ jobs:
         - name: Restore nuget packages - MediTrack Premium
           run: |
             cd MediTrackPremium
+            dotnet clean Meditrack.sln
             dotnet restore Meditrack.sln
 
         - name : Build MediTrack Premium App
           shell: bash
           run: |
             cd MediTrackPremium
-            dotnet clean Meditrack.sln
             dotnet publish -f:net6.0-android -c:Release
             
         # # Store Android Signing Keystore and password in Secrets using base64 encoding
