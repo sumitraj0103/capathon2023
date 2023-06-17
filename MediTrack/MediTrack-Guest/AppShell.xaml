@@ -5,26 +5,22 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:MediTrack_Guest.Models"
     xmlns:views="clr-namespace:MediTrack_Guest.Views"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False">
 
-    
-    <FlyoutItem Route="MedicationListPage" FlyoutDisplayOptions="AsMultipleItems">
+        <FlyoutItem Route="MedicationListPage" FlyoutDisplayOptions="AsMultipleItems" FlyoutItemIsVisible="True">
         <!--<ShellContent 
         Title="Patient" Icon="{x:Static models:Icons.patient}"
         ContentTemplate="{DataTemplate dashboardPages:DashboardPage}" 
         /-->
-        <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate views:MedicationListPage}"
-        Route="MainPage" />
         
-        <ShellContent 
-        Title="Doctor" Icon="{x:Static models:Icons.doctor}"
+            <ShellContent 
+        Title="MY Medications" Icon="{x:Static models:Icons.pills}"
         ContentTemplate="{DataTemplate views:MedicationListPage}"
         />
 
         <ShellContent 
-        Title="Medications" Icon="{x:Static models:Icons.pills}"
+        Title="MY Doctor" Icon="{x:Static models:Icons.doctor}"
         ContentTemplate="{DataTemplate views:MedicationListPage}"
         />
 

@@ -5,7 +5,7 @@
              xmlns:viewModels="clr-namespace:MediTrack_Guest.ViewModels"
              x:DataType="viewModels:MedicationListPageViewModel"
              x:Class="MediTrack_Guest.Views.MedicationListPage"
-             Title="Guest">
+             Title="My Medications">
     <StackLayout Margin="10">
         <Label Text="MedicationHistory" FontSize="20" />
         <Button Text="Add Medication" Command="{Binding AddUpdateMedicationCommand}" HorizontalOptions="EndAndExpand" />
