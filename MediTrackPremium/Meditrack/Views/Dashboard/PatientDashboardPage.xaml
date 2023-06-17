@@ -2,11 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Meditrack.Views.Dashboard.PatientDashboardPage"
-             Title="PatientDashboardPage">
-    <StackLayout>
-        <Label 
-            Text="Welcome to Patient Dashboard Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </StackLayout>
+             Title="My Medications">
+    <ListView x:Name="listmedication" BackgroundColor="Transparent"
+              SeparatorColor="Silver" 
+              RowHeight="70"
+               ItemSelected="listmedication_ItemSelected"
+              ItemTapped="listmedication_ItemTapped">
+
+        <ListView.ItemTemplate>
+
+            <DataTemplate>
+                <TextCell Text="{Binding Name}"
+                          Detail="{Binding Symptom}">
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
 </ContentPage>

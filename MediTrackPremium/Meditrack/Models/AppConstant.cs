@@ -89,7 +89,7 @@ namespace Meditrack.Models
                                 new ShellContent
                                 {
                                     Icon = Icons.pills,
-                                    Title = "Medications",
+                                    Title = "MY Medications",
                                     ContentTemplate = new DataTemplate(typeof(PatientDashboardPage)),
 
                                 },
