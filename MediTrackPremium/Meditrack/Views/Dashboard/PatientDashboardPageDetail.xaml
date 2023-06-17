@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Meditrack.Views.Dashboard.PatientDashboardPageDetail"
+           
+             Title="PatientInfo">
+    <VerticalStackLayout Padding="5" Margin="10" Spacing="15">
+
+        <Label x:Name="MyItemNameShow" HorizontalOptions="Start" FontSize="20" TextColor="Blue"/>
+        <Label x:Name="MyItemMobileShow" HorizontalOptions="Start" />
+        <Label x:Name="MyItemConditionShow" HorizontalOptions="Start" TextColor="DarkRed"/>
+
+        <Entry Text="" Placeholder="Prescribe Medication" />
+        <Button Text="Save"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Clicked="OnButtonClicked" FontSize="Body"/>
+        <Label x:Name="label"
+               Text="t"
+               FontSize="18"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>
