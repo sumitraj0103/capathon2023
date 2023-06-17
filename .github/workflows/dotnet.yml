@@ -95,18 +95,34 @@ jobs:
             dotnet workload install maui --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
             dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
 
-        - name: Restore nuget packages
+        - name: Restore nuget packages - MediTrack
           run: |
             cd MediTrack
             dotnet restore MediTrack-Guest.sln
 
           # https://docs.microsoft.com/en-us/dotnet/maui/android/deployment/overview
-        - name : Build Android App
+        - name : Build MediTrack App
           shell: bash
           run: |
             cd MediTrack
             dotnet publish -f:net6.0-android -c:Release
-            ls MediTrack-Guest/bin/Release
+              
+        - uses: actions/upload-artifact@v2
+          with:
+            name: meditrack-artifacts-android
+            path: |
+              MediTrack\MediTrack-Guest\bin\Release\net6.0-android\publish\*.apk
+
+        - name: Restore nuget packages - MediTrack Premium
+          run: |
+            cd MediTrackPremium
+            dotnet restore Meditrack.sln
+
+        - name : Build MediTrack Premium App
+          shell: bash
+          run: |
+            cd MediTrackPremium
+            dotnet publish -f:net6.0-android -c:Release
             
         # # Store Android Signing Keystore and password in Secrets using base64 encoding
         # # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil
@@ -130,6 +146,6 @@ jobs:
 
         - uses: actions/upload-artifact@v2
           with:
-            name: artifacts-android
+            name: meditrack-premium-artifacts-android
             path: |
-              MediTrack\MediTrack-Guest\bin\Release\net6.0-android\publish\*.apk
+              MediTrackPremium\MediTrack\bin\Release\net6.0-android\publish\*.apk
