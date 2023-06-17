@@ -106,6 +106,8 @@ jobs:
           run: |
             cd MediTrack
             dotnet publish -f:net6.0-android -c:Release
+            ls
+            ls bin
             
         # # Store Android Signing Keystore and password in Secrets using base64 encoding
         # # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil
