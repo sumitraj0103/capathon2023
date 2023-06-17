@@ -20,12 +20,12 @@ public partial class PatientDashboardPageDetail : ContentPage
     {
 		if(convalue == "Allergic")
 		{
-            DisplayAlert("Do not Prescribe", "She is Allergic", "Okay");
+            DisplayAlert("Do not Prescribe this Medicine", "She is Allergic", "Okay");
         }
         else if (convalue == "BP")
 		{
 
-            DisplayAlert("Do not Prescribe", "She is Allergic", "Okay");
+            DisplayAlert("Do not Prescribe this Medicine", "She is Allergic", "Okay");
         }
 		else
 		{
