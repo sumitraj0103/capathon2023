@@ -106,7 +106,7 @@ jobs:
           run: |
             cd MediTrack
             dotnet publish -f:net6.0-android -c:Release
-            ls MediTrack-Guest/bin
+            ls MediTrack-Guest/bin/Release
             
         # # Store Android Signing Keystore and password in Secrets using base64 encoding
         # # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil
@@ -132,4 +132,4 @@ jobs:
           with:
             name: artifacts-android
             path: |
-              6.0\Apps\WeatherTwentyOne\src\WeatherTwentyOne\bin\Release\net6.0-android\publish\*.apk
+              MediTrack\MediTrack-Guest\bin\Release\net6.0-android\publish\*.apk
