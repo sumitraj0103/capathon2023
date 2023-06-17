@@ -42,7 +42,7 @@ namespace Meditrack.Models
                                 new ShellContent
                                 {
                                     Icon = Icons.patient,
-                                    Title = "Patients ",
+                                    Title = "MY Patients",
                                     ContentTemplate = new DataTemplate(typeof(DoctorDashboardPage)),
 
                                 },
